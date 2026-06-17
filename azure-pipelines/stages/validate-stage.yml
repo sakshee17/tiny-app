@@ -1,0 +1,6 @@
+stages:
+- stage: Validate
+  displayName: PR Validation
+
+  jobs:
+  - template: ../jobs/build-test-job.yml

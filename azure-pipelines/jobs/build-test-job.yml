@@ -1,0 +1,49 @@
+jobs:
+- job: BuildAndTest
+  displayName: Build and Test
+
+  pool:
+    vmImage: ubuntu-latest
+
+  steps:
+
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '22.x'
+    displayName: Use Node.js
+
+  #
+  # Frontend
+  #
+
+  - script: npm install
+    workingDirectory: frontend
+    displayName: Install Frontend Dependencies
+
+  - script: npm run lint
+    workingDirectory: frontend
+    displayName: Lint Frontend
+
+  - script: npm run test
+    workingDirectory: frontend
+    displayName: Test Frontend
+
+  - script: npm run build
+    workingDirectory: frontend
+    displayName: Verify Frontend Build
+
+  #
+  # Backend
+  #
+
+  - script: npm install
+    workingDirectory: backend
+    displayName: Install Backend Dependencies
+
+  - script: npm run lint
+    workingDirectory: backend
+    displayName: Lint Backend
+
+  - script: npm run test
+    workingDirectory: backend
+    displayName: Test Backend

@@ -1,0 +1,9 @@
+trigger: none
+
+pr:
+  branches:
+    include:
+      - release/*
+
+stages:
+- template: ../stages/validate-stage.yml
