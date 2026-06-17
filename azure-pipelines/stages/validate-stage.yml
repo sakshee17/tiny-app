@@ -2,5 +2,7 @@ stages:
 - stage: Validate
   displayName: PR Validation
 
+  environment: 'uat'
+
   jobs:
   - template: ../jobs/build-test-job.yml
