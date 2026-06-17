@@ -1,9 +1,0 @@
-trigger:
-  branches:
-    include:
-      - release/*
-
-pr: none
-
-stages:
-- template: ../stages/build-stage.yml
