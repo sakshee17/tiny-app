@@ -1,0 +1,45 @@
+jobs:
+- job: Build
+  displayName: Build
+
+  pool:
+    vmImage: ubuntu-latest
+
+  steps:
+
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '22.x'
+    displayName: Use Node.js
+
+  #
+  # Frontend
+  #
+
+  - script: npm install
+    workingDirectory: frontend
+    displayName: Install Frontend Dependencies
+
+  - script: npm run build
+    workingDirectory: frontend
+    displayName: Build Frontend
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: 'frontend/dist'
+      artifact: 'frontend'
+    displayName: Publish Frontend Artifact
+
+  #
+  # Backend
+  #
+
+  - script: npm install
+    workingDirectory: backend
+    displayName: Install Backend Dependencies
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: 'backend'
+      artifact: 'backend'
+    displayName: Publish Backend Artifact

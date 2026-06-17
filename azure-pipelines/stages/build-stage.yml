@@ -1,0 +1,6 @@
+stages:
+- stage: Build
+  displayName: Build and Publish Artifacts
+
+  jobs:
+  - template: ../jobs/build-job.yml
