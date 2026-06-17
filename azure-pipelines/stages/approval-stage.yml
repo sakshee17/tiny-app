@@ -9,8 +9,6 @@ stages:
   jobs:
 
   - job: WaitForApproval
-    displayName: Wait For Approval
-
     pool: server
 
     steps:
