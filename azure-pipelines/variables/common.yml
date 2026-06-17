@@ -1,0 +1,7 @@
+variables:
+
+- name: nodeVersion
+  value: '22.x'
+
+- name: vmImage
+  value: ubuntu-latest
