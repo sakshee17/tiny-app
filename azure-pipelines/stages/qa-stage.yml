@@ -1,0 +1,12 @@
+stages:
+
+- stage: qa
+  displayName: qa
+
+  dependsOn: DEV
+
+  jobs:
+
+  - template: ../jobs/deploy-job.yml
+    parameters:
+      environmentName: qa

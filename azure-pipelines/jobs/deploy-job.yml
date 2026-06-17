@@ -1,0 +1,28 @@
+parameters:
+- name: environmentName
+  type: string
+
+jobs:
+
+- deployment: Deploy
+  displayName: Deploy to ${{ parameters.environmentName }}
+
+  environment: ${{ parameters.environmentName }}
+
+  strategy:
+    runOnce:
+      deploy:
+
+        steps:
+
+        - download: current
+          artifact: frontend
+
+        - download: current
+          artifact: backend
+
+        - script: |
+            echo "Deploying to ${{ parameters.environmentName }}"
+            echo "Artifacts downloaded:"
+            ls -R $(Pipeline.Workspace)
+          displayName: Verify Artifacts

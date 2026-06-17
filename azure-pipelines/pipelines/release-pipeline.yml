@@ -1,0 +1,16 @@
+trigger:
+  branches:
+    include:
+      - release/*
+
+pr: none
+
+stages:
+
+- template: ../stages/build-stage.yml
+
+- template: ../stages/dev-stage.yml
+
+- template: ../stages/qa-stage.yml
+
+- template: ../stages/uat-stage.yml

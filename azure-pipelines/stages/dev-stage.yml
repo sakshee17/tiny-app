@@ -1,0 +1,12 @@
+stages:
+
+- stage: dev
+  displayName: dev
+
+  dependsOn: Build
+
+  jobs:
+
+  - template: ../jobs/deploy-job.yml
+    parameters:
+      environmentName: dev
