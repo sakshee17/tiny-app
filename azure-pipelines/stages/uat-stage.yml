@@ -3,7 +3,8 @@ stages:
 - stage: uat
   displayName: uat
 
-  dependsOn: qa
+  dependsOn: APPROVAL
+  condition: succeeded()
 
   jobs:
 

@@ -12,6 +12,8 @@ stages:
 
 - template: ../stages/uat-stage.yml
 
+- template: ../stages/approval-stage.yml
+
 - template: ../stages/stage-stage.yml
 
 - template: ../stages/preprod-stage.yml

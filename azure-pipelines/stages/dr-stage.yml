@@ -4,6 +4,8 @@ stages:
   displayName: dr
 
   dependsOn: PROD_GREEN
+  condition: succeeded()
+
 
   jobs:
 

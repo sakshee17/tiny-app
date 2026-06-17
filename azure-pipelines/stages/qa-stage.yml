@@ -3,7 +3,8 @@ stages:
 - stage: qa
   displayName: qa
 
-  dependsOn: DEV
+  dependsOn: dev
+  condition: succeeded()
 
   jobs:
 

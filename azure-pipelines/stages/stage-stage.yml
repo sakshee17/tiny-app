@@ -4,6 +4,8 @@ stages:
   displayName: stage
 
   dependsOn: UAT
+  condition: succeeded()
+
 
   jobs:
 

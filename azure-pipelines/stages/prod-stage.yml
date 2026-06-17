@@ -4,6 +4,8 @@ stages:
   displayName: prod_green
 
   dependsOn: PREPROD_BLUE
+  condition: succeeded()
+
 
   jobs:
 

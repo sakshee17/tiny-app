@@ -4,6 +4,8 @@ stages:
   displayName: preprod_blue
 
   dependsOn: STAGE
+  condition: succeeded()
+
 
   jobs:
 

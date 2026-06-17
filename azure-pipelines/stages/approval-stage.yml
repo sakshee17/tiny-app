@@ -1,0 +1,24 @@
+stages:
+
+- stage: APPROVAL
+  displayName: Approval
+
+  dependsOn: UAT
+  condition: succeeded()
+
+  jobs:
+
+  - job: WaitForApproval
+    displayName: Wait For Approval
+
+    pool: server
+
+    steps:
+
+    - task: ManualValidation@0
+      timeoutInMinutes: 60
+
+      inputs:
+        notifyUsers: ''
+        instructions: 'Approve deployment to STAGE'
+        onTimeout: reject
