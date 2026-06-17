@@ -1,13 +1,13 @@
 stages:
 
-- stage: uat
-  displayName: uat
+- stage: UAT
+  displayName: UAT
 
-  dependsOn: APPROVAL
+  dependsOn: QA
   condition: succeeded()
 
   jobs:
 
   - template: ../jobs/deploy-job.yml
     parameters:
-      environmentName: uat
+      environmentName: UAT
