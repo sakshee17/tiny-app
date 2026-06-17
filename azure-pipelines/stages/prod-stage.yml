@@ -1,0 +1,12 @@
+stages:
+
+- stage: prod_green
+  displayName: prod_green
+
+  dependsOn: PREPROD_BLUE
+
+  jobs:
+
+  - template: ../jobs/deploy-job.yml
+    parameters:
+      environmentName: prod_green

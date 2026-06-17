@@ -1,7 +1,4 @@
-trigger:
-  branches:
-    include:
-      - release/*
+trigger: none
 
 pr: none
 
@@ -14,3 +11,11 @@ stages:
 - template: ../stages/qa-stage.yml
 
 - template: ../stages/uat-stage.yml
+
+- template: ../stages/stage-stage.yml
+
+- template: ../stages/preprod-stage.yml
+
+- template: ../stages/prod-stage.yml
+
+- template: ../stages/dr-stage.yml

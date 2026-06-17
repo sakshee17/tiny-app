@@ -1,0 +1,12 @@
+stages:
+
+- stage: dr
+  displayName: dr
+
+  dependsOn: PROD_GREEN
+
+  jobs:
+
+  - template: ../jobs/deploy-job.yml
+    parameters:
+      environmentName: dr
