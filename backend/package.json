@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon --watch src --exec node src/server.js",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "lint": "eslint src"
   },
   "dependencies": {
     "express": "^4.18.2"

@@ -1,13 +1,15 @@
 {
   "env": {
     "browser": true,
-    "es2021": true,
-    "vitest": true
+    "es2021": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "rules": {
     "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
