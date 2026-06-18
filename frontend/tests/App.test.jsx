@@ -19,7 +19,7 @@ global.fetch = vi.fn((url) => {
 
 test('renders Tiny App and cards with backend data', async () => {
   render(React.createElement(App))
-  expect(screen.getByText('Tiny App')).toBeInTheDocument()
+  expect(screen.getByText('🚀 Tiny App — Pipeline Powered!')).toBeInTheDocument()
 
   await waitFor(() => expect(screen.getByText('Welcome to Tiny API')).toBeInTheDocument())
   expect(screen.getByText('Healthy')).toBeInTheDocument()

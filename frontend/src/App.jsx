@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1>Tiny App</h1>
+      <h1>🚀 Tiny App — Pipeline Powered!</h1>
       <div className="grid">
         <div className="card">
           <h2>Home</h2>
